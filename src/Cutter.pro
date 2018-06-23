@@ -228,7 +228,9 @@ SOURCES += \
     dialogs/WelcomeDialog.cpp \
     RunScriptTask.cpp \
     dialogs/EditMethodDialog.cpp \
-    dialogs/LoadNewTypesDialog.cpp
+    dialogs/LoadNewTypesDialog.cpp \
+    plugins/CutterPythonPlugin.cpp \
+    common/PythonManager.cpp
 
 HEADERS  += \
     Cutter.h \
@@ -339,7 +341,9 @@ HEADERS  += \
     RunScriptTask.h \
     common/Json.h \
     dialogs/EditMethodDialog.h \
-    dialogs/LoadNewTypesDialog.h
+    dialogs/LoadNewTypesDialog.h \
+    plugins/CutterPythonPlugin.h \
+    common/PythonManager.h
 
 FORMS    += \
     dialogs/AboutDialog.ui \
