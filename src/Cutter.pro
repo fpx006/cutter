@@ -229,7 +229,6 @@ SOURCES += \
     RunScriptTask.cpp \
     dialogs/EditMethodDialog.cpp \
     dialogs/LoadNewTypesDialog.cpp \
-    plugins/CutterPythonPlugin.cpp \
     common/PythonManager.cpp \
     plugins/PluginManager.cpp
 
@@ -343,7 +342,6 @@ HEADERS  += \
     common/Json.h \
     dialogs/EditMethodDialog.h \
     dialogs/LoadNewTypesDialog.h \
-    plugins/CutterPythonPlugin.h \
     common/PythonManager.h \
     plugins/PluginManager.h
 
