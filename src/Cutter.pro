@@ -230,7 +230,8 @@ SOURCES += \
     dialogs/EditMethodDialog.cpp \
     dialogs/LoadNewTypesDialog.cpp \
     plugins/CutterPythonPlugin.cpp \
-    common/PythonManager.cpp
+    common/PythonManager.cpp \
+    plugins/PluginManager.cpp
 
 HEADERS  += \
     Cutter.h \
@@ -343,7 +344,8 @@ HEADERS  += \
     dialogs/EditMethodDialog.h \
     dialogs/LoadNewTypesDialog.h \
     plugins/CutterPythonPlugin.h \
-    common/PythonManager.h
+    common/PythonManager.h \
+    plugins/PluginManager.h
 
 FORMS    += \
     dialogs/AboutDialog.ui \
