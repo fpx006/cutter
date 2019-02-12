@@ -9,8 +9,8 @@ configuration:
 # Environment
 environment:
   NINJA_URL: https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-win.zip
-  QT32PATH: 'C:\Qt\5.10.1\msvc2015'
-  QT64PATH: 'C:\Qt\5.10.1\msvc2015_64'
+  QT32PATH: 'C:\Qt\5.12\msvc2015'
+  QT64PATH: 'C:\Qt\5.12\msvc2015_64'
   VSVARSALLPATH: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
   matrix:
     # Build: qmake vs2015 x86 shared
