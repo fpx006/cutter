@@ -14,10 +14,10 @@ environment:
   VSVARSALLPATH: 'C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat'
   matrix:
     # Build: qmake vs2015 x86 shared
-    - ARCH: x86
-      PYTHON: 'C:\Python36'
-      QMAKE: 1
-      DEPLOY: true
+    #- ARCH: x86
+    #  PYTHON: 'C:\Python36'
+    #  QMAKE: 1
+    #  DEPLOY: true
     # Build: qmake vs2015 x64 shared
     - ARCH: x64
       PYTHON: 'C:\Python36-x64'
@@ -34,7 +34,7 @@ install:
   - cmd: set "PATH=%CD%;%PYTHON%;%PATH%"
   - cmd: call "%VSVARSALLPATH%" %ARCH%
   - cmd: if "%ARCH%" == "x64" ( set "PATH=%QT64PATH%\bin;%PATH%" ) else ( set "PATH=%QT32PATH%\bin;%PATH%" )
-  - cmd: python -m pip install meson==0.48.2
+  - cmd: python -m pip install meson
   - cmd: powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; wget %NINJA_URL% -OutFile ninja.zip; Expand-Archive .\ninja.zip -DestinationPath ."
   # Artifacts
   - cmd: set "ARTIFACT_NAME=Cutter-v1.7.4-%ARCH%.Windows"
@@ -47,7 +47,7 @@ before_build:
 # Build config
 build_script:
   - cmd: if defined QMAKE ( call prepare_r2.bat && call build.bat CUTTER_APPVEYOR_R2DEC=true )
-  - cmd: if defined MESON ( python meson.py --release --dist=%ARTIFACT_PATH% --backend=%BACKEND% --jupyter --webengine )
+  - cmd: if defined MESON ( python meson.py --release --dist=%ARTIFACT_PATH% --backend=%BACKEND% --jupyter )
 
 after_build:
   - cmd: if defined QMAKE ( set "PATH=%CD%\r2_dist_%ARCH%;%PATH%" && powershell scripts\bundle_r2dec.ps1 "%CD%\%ARTIFACT_PATH%" )
